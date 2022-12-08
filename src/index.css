@@ -1,0 +1,60 @@
+:root {
+  --light: #e6e6e6;
+  --dark: #242424;
+  --orange-light: #ff9800;
+  --orange-dark: #d17f07;
+
+  font-family: monospace, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color: var(--light);
+  background-color: var(--dark);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+a {
+  font-weight: 500;
+  color: var(--orange-light);
+  text-decoration: inherit;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--orange-dark);
+}
+
+button {
+  background: var(--orange-light);
+  color: var(--dark);
+  border: none;
+  border-radius: .25rem;
+  padding: 1rem;
+  transition: background 0.3s;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: var(--orange-dark);
+}
