@@ -11,15 +11,17 @@
 }
 
 .update-user__row input {
-  flex-grow:1;
+  flex-grow: 1;
   background-color: transparent;
-  border: 1px solid var(--orange-dark);
+  outline: 1px solid var(--orange-dark);
   color: var(--light);
   padding: .25rem;
-  outline: none;
+  font-size: 1rem;
+  border: none;
 }
+
 .update-user__row input:focus,
 .update-user__row input:active {
-  border: 1px solid var(--orange-light);
+  outline: 1px solid var(--orange-light);
   box-shadow: var(--box-shadow-light);
 }
