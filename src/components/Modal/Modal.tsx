@@ -5,7 +5,7 @@ import './Modal.css'
 
 function Modal (): JSX.Element | null {
   const { context, setContext } = useContext(Context)
-  const { actions, content, title, visible } = context.modal
+  const { content, title, visible } = context.modal
 
   function handleClose (): void {
     setContext((prev: ContextState) => ({
@@ -29,16 +29,6 @@ function Modal (): JSX.Element | null {
           </button>
         </header>
         <section>{content}</section>
-        <footer>
-          <>
-            {actions?.map(([label, fn]) => (
-              <button onClick={fn}>{label}</button>
-            ))}
-            <button onClick={handleClose} className="modal__close">
-              Close
-            </button>
-          </>
-        </footer>
       </div>
     </div>
   )

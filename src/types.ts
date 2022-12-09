@@ -1,5 +1,4 @@
 export interface ModalState {
-  actions?: Array<[string, () => unknown]>
   content: React.ReactNode | null
   title?: string
   visible: boolean

@@ -5,7 +5,6 @@ export const defaultContextState: ContextState = {
   users: [],
   pagination: 1,
   modal: {
-    actions: [],
     content: undefined,
     title: undefined,
     visible: false
