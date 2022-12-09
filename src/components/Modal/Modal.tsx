@@ -17,8 +17,6 @@ function Modal (): JSX.Element | null {
     }))
   }
 
-  if (!visible) return null
-
   useEffect(() => {
     const closeModalOnEscKey = (evt: KeyboardEvent): void => {
       if (evt.key === 'Escape') {
@@ -38,6 +36,8 @@ function Modal (): JSX.Element | null {
       document.removeEventListener('keyup', closeModalOnEscKey)
     }
   }, [])
+
+  if (!visible) return null
 
   return (
     <div className='modal'>
