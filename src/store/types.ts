@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import { User } from '../types'
+import { ModalState, User } from '../types'
 
 export interface ProviderProps {
   children: ReactNode
@@ -8,4 +8,5 @@ export interface ProviderProps {
 export interface ContextState {
   users: User[] | []
   pagination: number
+  modal: ModalState
 }

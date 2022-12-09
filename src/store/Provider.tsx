@@ -4,7 +4,13 @@ import { ContextState, ProviderProps } from './types'
 
 export const defaultContextState: ContextState = {
   users: [],
-  pagination: 1
+  pagination: 1,
+  modal: {
+    actions: [],
+    content: undefined,
+    title: undefined,
+    visible: false
+  }
 }
 
 const Provider: React.FC<ProviderProps> = ({ children }) => {
