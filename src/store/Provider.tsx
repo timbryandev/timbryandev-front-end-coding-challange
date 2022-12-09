@@ -1,16 +1,14 @@
-import React, { ReactNode, useState } from 'react'
+import React, { useState } from 'react'
 import Context from './Context'
-import { User } from '../types'
+import { ContextState, ProviderProps } from './types'
 
-export interface IProps {
-  children: ReactNode
+export const defaultContextState: ContextState = {
+  users: [],
+  pagination: 1
 }
 
-const Provider: React.FC<IProps> = ({ children }) => {
-  const [context, setContext] = useState({
-    users: [] as User[],
-    pagination: 1
-  })
+const Provider: React.FC<ProviderProps> = ({ children }) => {
+  const [context, setContext] = useState(defaultContextState)
 
   const value = { context, setContext }
 
