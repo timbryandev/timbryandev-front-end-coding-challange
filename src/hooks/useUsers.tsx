@@ -8,12 +8,12 @@ const useUsers = (): ContextState['users'] => {
 
   useEffect(() => {
     const fetchUsers = async (): Promise<void> => {
-      const fetched = await getUsers()
+      const fetched = await getUsers(context.pagination)
       setContext((prev: ContextState) => ({ ...prev, users: fetched }))
     }
 
     void fetchUsers()
-  }, [])
+  }, [context.pagination])
 
   return context.users
 }
