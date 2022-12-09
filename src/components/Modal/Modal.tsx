@@ -1,13 +1,11 @@
 import { useContext } from 'react'
 import Context from '../../store/Context'
 import { ContextState } from '../../store/types'
-import { ModalState } from '../../types'
 import './Modal.css'
 
 function Modal (): JSX.Element | null {
-  // @ts-expect-error
   const { context, setContext } = useContext(Context)
-  const { actions, content, title, visible } = context.modal as ModalState
+  const { actions, content, title, visible } = context.modal
 
   function handleClose (): void {
     setContext((prev: ContextState) => ({

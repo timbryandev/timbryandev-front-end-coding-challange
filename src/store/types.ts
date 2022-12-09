@@ -6,7 +6,7 @@ export interface ProviderProps {
 }
 
 export interface ContextState {
-  users: User[] | []
+  users: User[] | [] | Error
   pagination: number
   modal: ModalState
 }

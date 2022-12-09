@@ -16,7 +16,7 @@ function UserTable (): JSX.Element {
       return (
         <tr className='users__row users__row--state'>
           <td colSpan={COLUMN_HEADERS.length} className='users__error'>
-            {users}
+            {JSON.stringify(users)}
           </td>
         </tr>
       )

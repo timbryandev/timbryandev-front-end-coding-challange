@@ -1,17 +1,6 @@
 import React, { useState } from 'react'
-import Context from './Context'
-import { ContextState, ProviderProps } from './types'
-
-export const defaultContextState: ContextState = {
-  users: [],
-  pagination: 1,
-  modal: {
-    actions: [],
-    content: undefined,
-    title: undefined,
-    visible: false
-  }
-}
+import Context, { defaultContextState } from './Context'
+import { ProviderProps } from './types'
 
 const Provider: React.FC<ProviderProps> = ({ children }) => {
   const [context, setContext] = useState(defaultContextState)

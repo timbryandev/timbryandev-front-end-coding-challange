@@ -4,7 +4,6 @@ import { ContextState } from '../store/types'
 import { getUsers } from '../network/users/getUsers'
 
 const useUsers = (): ContextState['users'] => {
-  // @ts-expect-error
   const { context, setContext } = useContext(Context)
 
   useEffect(() => {

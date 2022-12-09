@@ -1,5 +1,23 @@
-import { createContext } from 'react'
+import React, { createContext } from 'react'
+import { ContextState } from './types'
 
-const Context = createContext({})
+export const defaultContextState: ContextState = {
+  users: [],
+  pagination: 1,
+  modal: {
+    actions: [],
+    content: undefined,
+    title: undefined,
+    visible: false
+  }
+}
+
+const context: ContextState = defaultContextState
+const setContext: React.Dispatch<React.SetStateAction<ContextState>> = () => {}
+
+const Context = createContext({
+  context,
+  setContext
+})
 
 export default Context
