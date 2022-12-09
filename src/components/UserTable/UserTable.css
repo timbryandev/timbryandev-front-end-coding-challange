@@ -37,3 +37,15 @@
 .users__avatar {
   border-radius: 1rem;
 }
+
+.error {
+  background: red;
+  font-weight: bold;
+  color: var(--dark)
+}
+
+.loading {
+  background: var(--orange);
+  font-weight: bold;
+  color: var(--dark)
+}
