@@ -1,7 +1,12 @@
-import { UserTableProps } from './types'
+// import { useContext } from 'react'
+// import Context from '../../store/Context'
 import './UserTable.css'
+import useUsers from '../../hooks/useUsers'
 
-function UserTable ({ users }: UserTableProps): JSX.Element {
+function UserTable (): JSX.Element {
+  // const { context, setContext } = useContext(Context)
+  const users = useUsers()
+
   function handleEditUser (id: number): void {
     console.log('TODO: Implement handleEditUser', { id })
   }
@@ -18,27 +23,28 @@ function UserTable ({ users }: UserTableProps): JSX.Element {
         </tr>
       </thead>
       <tbody className='users__body'>
-        {users.map(({ avatar, email, firstName, id, lastName }) => (
-          <tr key={email}>
-            <td>
-              <img
-                className='users__avatar'
-                src={avatar}
-                alt={`Avatar of ${firstName} ${lastName}`}
-              />
-            </td>
-            <td>{firstName}</td>
-            <td>{lastName}</td>
-            <td>
-              <a href={`mailto:${email}`}>{email}</a>
-            </td>
-            <td>
-              <button onClick={() => handleEditUser(id)}>Edit Details</button>
-            </td>
-          </tr>
-        ))}
+        {
+          users.map(({ avatar, email, firstName, id, lastName }) => (
+            <tr key={email}>
+              <td>
+                <img
+                  className='users__avatar'
+                  src={avatar}
+                  alt={`Avatar of ${firstName} ${lastName}`}
+                />
+              </td>
+              <td>{firstName}</td>
+              <td>{lastName}</td>
+              <td>
+                <a href={`mailto:${email}`}>{email}</a>
+              </td>
+              <td>
+                <button onClick={() => handleEditUser(id)}>Edit Details</button>
+              </td>
+            </tr>
+          ))}
       </tbody>
-      <tfoot>
+      <tfoot className="users__foot">
         <tr>
           <td colSpan={5}>
             <p>[pagination will go here]</p>

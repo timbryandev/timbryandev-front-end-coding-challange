@@ -9,7 +9,7 @@ function App (): JSX.Element {
         <h1>Front-end coding challenge</h1>
       </header>
       <main>
-        <UserTable users={[]} />
+        <UserTable />
       </main>
       <footer></footer>
     </div>

@@ -1,11 +1,25 @@
 .users {
   border-spacing: 0;
-  width:100%;
+  width: 100%;
 }
 
 .users td,
 .users th {
   padding: .5rem 1rem;
+}
+
+.users__head,
+.users__foot {
+  position: sticky;
+  background-color: var(--dark-transparent)
+}
+
+.users__head {
+  top: 0;
+}
+
+.users__foot {
+  bottom: 0;
 }
 
 .users__head th {
