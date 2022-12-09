@@ -1,14 +1,38 @@
-// import { useContext } from 'react'
-// import Context from '../../store/Context'
-import './UserTable.css'
+import { useContext } from 'react'
+import { User } from '../../types'
+import UpdateUserForm from '../UpdateUserForm'
+import Context from '../../store/Context'
 import useUsers from '../../hooks/useUsers'
+import './UserTable.css'
+
 const COLUMN_HEADERS = ['Avatar', 'First name', 'Last name', 'Email', 'Action']
+
 function UserTable (): JSX.Element {
-  // const { context, setContext } = useContext(Context)
+  const { setContext } = useContext(Context)
+
   const users = useUsers()
 
-  function handleEditUser (id: number): void {
-    console.log('TODO: Implement handleEditUser', { id })
+  function handleEditUser (user: User): void {
+    function closeModal (): void {
+      setContext(prev => ({
+        ...prev,
+        modal: {
+          ...prev.modal,
+          visible: false
+        }
+      }))
+    }
+
+    const content = <UpdateUserForm onSuccess={closeModal} user={user} />
+
+    setContext(prev => ({
+      ...prev,
+      modal: {
+        content,
+        title: 'Edit Details',
+        visible: true
+      }
+    }))
   }
 
   function renderTableBody (): JSX.Element {
@@ -34,25 +58,30 @@ function UserTable (): JSX.Element {
 
     return (
       <>
-        {users.map(({ avatar, email, firstName, id, lastName }) => (
-          <tr key={email} className='users__row'>
-            <td>
-              <img
-                className='users__avatar'
-                src={avatar}
-                alt={`Avatar of ${firstName} ${lastName}`}
-              />
-            </td>
-            <td>{firstName}</td>
-            <td>{lastName}</td>
-            <td>
-              <a href={`mailto:${email}`}>{email}</a>
-            </td>
-            <td>
-              <button onClick={() => handleEditUser(id)}>Edit Details</button>
-            </td>
-          </tr>
-        ))}
+        {users.map(user => {
+          const { avatar, email, firstName, lastName } = user
+          return (
+            <tr key={email} className='users__row'>
+              <td>
+                <img
+                  className='users__avatar'
+                  src={avatar}
+                  alt={`Avatar of ${firstName} ${lastName}`}
+                />
+              </td>
+              <td>{firstName}</td>
+              <td>{lastName}</td>
+              <td>
+                <a href={`mailto:${email}`}>{email}</a>
+              </td>
+              <td>
+                <button onClick={() => handleEditUser(user)}>
+                  Edit Details
+                </button>
+              </td>
+            </tr>
+          )
+        })}
       </>
     )
   }
