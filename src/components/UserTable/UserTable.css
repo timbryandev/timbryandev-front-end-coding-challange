@@ -1,0 +1,19 @@
+.users {
+  border-spacing:0;
+}
+
+.users td, .users th {
+  padding: .5rem 1rem;
+}
+
+.users__head th {
+  border-bottom:1px solid currentColor;
+}
+
+.users__body tr:hover {
+  background: var(--orange-dark);
+}
+
+.users__body tr:hover a {
+  color: var(--dark)
+}
