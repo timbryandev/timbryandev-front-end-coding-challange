@@ -4,7 +4,7 @@ describe('util: camelcaseObject', () => {
   it('should return the same object it receives', () => {
     const data = {
       aProp: 1,
-      bProp: 2,
+      bProp: 2
     }
 
     const expected = { ...data }
@@ -19,14 +19,14 @@ describe('util: camelcaseObject', () => {
       a_Prop: 1,
       bProp: 2,
       'c-prop': 3,
-      D_PROP: 4,
+      D_PROP: 4
     }
 
     const expected = {
       aProp: 1,
       bProp: 2,
       cProp: 3,
-      dProp: 4,
+      dProp: 4
     }
     const result = camelcaseObject(data)
 
