@@ -1,13 +1,15 @@
 .users {
-  border-spacing:0;
+  border-spacing: 0;
+  width:100%;
 }
 
-.users td, .users th {
+.users td,
+.users th {
   padding: .5rem 1rem;
 }
 
 .users__head th {
-  border-bottom:1px solid currentColor;
+  border-bottom: 1px solid currentColor;
 }
 
 .users__body tr:hover {
@@ -16,4 +18,8 @@
 
 .users__body tr:hover a {
   color: var(--dark)
+}
+
+.users__avatar {
+  border-radius: 1rem;
 }
