@@ -10,8 +10,7 @@ export const getUsers = async (page = 1): Promise<User[] | Error> => {
     })
 
     const json = await response.json()
-
-    const users = camelcaseObject(json.data) as unknown as User[]
+    const users = json.data.map(camelcaseObject) as unknown as User[]
 
     return users
   } catch (err) {
