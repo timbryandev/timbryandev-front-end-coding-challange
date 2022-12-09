@@ -14,9 +14,9 @@ function UserTable (): JSX.Element {
   function renderTableBody (): JSX.Element {
     if (!Array.isArray(users)) {
       return (
-        <tr>
-          <td colSpan={COLUMN_HEADERS.length}>
-            <div className='error'>{users}</div>
+        <tr className='users__row users__row--state'>
+          <td colSpan={COLUMN_HEADERS.length} className='users__error'>
+            {users}
           </td>
         </tr>
       )
@@ -24,9 +24,9 @@ function UserTable (): JSX.Element {
 
     if (users.length === 0) {
       return (
-        <tr>
-          <td colSpan={COLUMN_HEADERS.length}>
-            <div className='loading'>Loading...</div>
+        <tr className='users__row users__row--state'>
+          <td colSpan={COLUMN_HEADERS.length} className='users__loading'>
+            Loading users...
           </td>
         </tr>
       )
@@ -35,7 +35,7 @@ function UserTable (): JSX.Element {
     return (
       <>
         {users.map(({ avatar, email, firstName, id, lastName }) => (
-          <tr key={email}>
+          <tr key={email} className='users__row'>
             <td>
               <img
                 className='users__avatar'

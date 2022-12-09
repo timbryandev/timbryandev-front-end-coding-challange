@@ -26,6 +26,10 @@
   border-bottom: 1px solid currentColor;
 }
 
+.users__body {
+  min-height: 100px;
+}
+
 .users__body tr:hover {
   background: var(--orange-dark);
 }
@@ -38,16 +42,23 @@
   border-radius: 1rem;
 }
 
-.error {
-  background: red;
+.users__row--state {
   font-weight: bold;
-  color: var(--dark)
+  pointer-events: none;
 }
 
-.loading {
-  background: var(--orange);
-  font-weight: bold;
-  color: var(--dark)
+.users__row--state td {
+  padding:  2rem 1rem;
+}
+
+.users__error {
+  background: red;
+  color: var(--dark);
+}
+
+.users__loading {
+  background: var(--orange-light);
+  color: var(--dark);
 }
 
 @media (max-width: 850px) {
