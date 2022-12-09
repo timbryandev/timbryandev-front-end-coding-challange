@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import { User } from '../../types'
+import Pagination from './Pagination'
 import UpdateUserForm from '../UpdateUserForm'
 import Context from '../../store/Context'
 import useUsers from '../../hooks/useUsers'
@@ -98,8 +99,8 @@ function UserTable (): JSX.Element {
       <tbody className='users__body'>{renderTableBody()}</tbody>
       <tfoot className='users__foot'>
         <tr>
-          <td colSpan={5}>
-            <p>[pagination will go here]</p>
+          <td colSpan={COLUMN_HEADERS.length}>
+            <Pagination />
           </td>
         </tr>
       </tfoot>
