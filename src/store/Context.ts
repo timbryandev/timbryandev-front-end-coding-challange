@@ -3,7 +3,11 @@ import { ContextState } from './types'
 
 export const defaultContextState: ContextState = {
   users: [],
-  pagination: 1,
+  pagination: {
+    currentPage: 1,
+    min: 1,
+    max: Infinity
+  },
   modal: {
     content: undefined,
     title: undefined,

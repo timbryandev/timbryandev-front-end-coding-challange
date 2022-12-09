@@ -2,12 +2,18 @@ import { useContext } from 'react'
 import Context from '../../store/Context'
 import './Pagination.css'
 
-function Pagination (): JSX.Element {
+function Pagination(): JSX.Element {
   const { context, setContext } = useContext(Context)
-  const { pagination } = context
+  const { currentPage, min, max } = context.pagination
 
   const updatePagination = (value: number): void => {
-    setContext({ ...context, pagination: context.pagination + value })
+    setContext({
+      ...context,
+      pagination: {
+        ...context.pagination,
+        currentPage: context.pagination.currentPage + value,
+      },
+    })
   }
 
   return (
@@ -15,14 +21,18 @@ function Pagination (): JSX.Element {
       <button
         className='pagination__button'
         title='previous'
-        disabled={pagination <= 1}
+        disabled={currentPage <= min}
         onClick={() => updatePagination(-1)}
       >
         &lt;
       </button>
+      <p>
+        Page {currentPage} of {max}
+      </p>
       <button
         className='pagination__button'
         title='next'
+        disabled={currentPage >= max}
         onClick={() => updatePagination(1)}
       >
         &gt;

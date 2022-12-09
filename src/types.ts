@@ -4,6 +4,12 @@ export interface ModalState {
   visible: boolean
 }
 
+export interface PaginationState {
+  currentPage: number
+  min: number
+  max: number
+}
+
 export interface User {
   id: number
   email: string
