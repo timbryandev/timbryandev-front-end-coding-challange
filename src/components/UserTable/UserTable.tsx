@@ -1,5 +1,5 @@
 import { UserTableProps } from './types'
-import "./UserTable.css"
+import './UserTable.css'
 
 function UserTable ({ users }: UserTableProps): JSX.Element {
   return (

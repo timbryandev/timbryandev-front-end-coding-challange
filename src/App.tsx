@@ -2,7 +2,7 @@ import UserTable from './components/UserTable'
 
 import './App.css'
 
-function App() : JSX.Element {
+function App (): JSX.Element {
   return (
     <div className='App'>
       <header>
