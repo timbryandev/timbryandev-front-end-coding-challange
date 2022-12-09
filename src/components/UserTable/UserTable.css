@@ -49,3 +49,20 @@
   font-weight: bold;
   color: var(--dark)
 }
+
+@media (max-width: 850px) {
+
+  .users__head {
+    display: none;
+  }
+
+  .users tr {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .users td {
+    width: 100%;
+  }
+}
