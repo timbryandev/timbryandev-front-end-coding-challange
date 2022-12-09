@@ -4,6 +4,7 @@ import { ContextState } from '../../store/types'
 import './Modal.css'
 
 function Modal (): JSX.Element | null {
+  const backgroundRef = useRef<HTMLDivElement>(null)
   const closeRef = useRef<HTMLButtonElement>(null)
   const { context, setContext } = useContext(Context)
   const { content, title, visible } = context.modal
@@ -18,23 +19,23 @@ function Modal (): JSX.Element | null {
     }))
   }
 
-  useEffect(() => {
-    const closeModalOnEscKey = (evt: KeyboardEvent): void => {
-      if (evt.key === 'Escape') {
-        setContext((prev: ContextState) => ({
-          ...prev,
-          modal: {
-            ...prev.modal,
-            visible: false
-          }
-        }))
-      }
+  const closeModalOnEscKey = (evt: KeyboardEvent): void => {
+    if (evt.key === 'Escape') {
+      handleClose()
     }
+  }
 
+  const closeModalOnBackgroundClick = (evt: MouseEvent): void => {
+    if (evt.target === backgroundRef.current) { handleClose() }
+  }
+
+  useEffect(() => {
     document.addEventListener('keyup', closeModalOnEscKey)
+    document.addEventListener('click', closeModalOnBackgroundClick)
 
     return () => {
       document.removeEventListener('keyup', closeModalOnEscKey)
+      document.removeEventListener('click', closeModalOnBackgroundClick)
     }
   }, [])
 
@@ -48,11 +49,12 @@ function Modal (): JSX.Element | null {
   if (!visible) return null
 
   return (
-    <div className='modal'>
-      <div className='modal__content' >
+    <div className='modal' ref={backgroundRef}>
+      <div className='modal__content'>
         <header className='modal__header'>
           {typeof title === 'string' && <h2>{title}</h2>}
-          <button ref={closeRef}
+          <button
+            ref={closeRef}
             onClick={handleClose}
             className='modal__close modal__close--header'
           >
