@@ -8,12 +8,17 @@ const useUsers = (): ContextState['users'] => {
 
   useEffect(() => {
     const fetchUsers = async (): Promise<void> => {
-      const fetched = await getUsers(context.pagination.currentPage)
-      setContext((prev: ContextState) => ({ ...prev, users: fetched }))
+      // @ts-expect-error
+      const [users, totalPages] = await getUsers(context.pagination.currentPage)
+      setContext((prev: ContextState) => ({
+        ...prev,
+        users,
+        pagination: { ...prev.pagination, max: totalPages }
+      }))
     }
 
     void fetchUsers()
-  }, [context.pagination])
+  }, [context.pagination.currentPage])
 
   return context.users
 }

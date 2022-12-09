@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import Context from '../../store/Context'
 import './Pagination.css'
 
-function Pagination(): JSX.Element {
+function Pagination (): JSX.Element {
   const { context, setContext } = useContext(Context)
   const { currentPage, min, max } = context.pagination
 
@@ -11,8 +11,8 @@ function Pagination(): JSX.Element {
       ...context,
       pagination: {
         ...context.pagination,
-        currentPage: context.pagination.currentPage + value,
-      },
+        currentPage: context.pagination.currentPage + value
+      }
     })
   }
 
