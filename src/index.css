@@ -5,7 +5,7 @@
   --orange-light: #ff9800;
   --orange-dark: #d17f07;
 
-  --box-shadow-light:  0 0 5px 1px var(--orange-light);
+  --box-shadow-light: 0 0 5px 1px var(--orange-light);
 
   font-family: monospace, sans-serif;
   font-size: 18px;
@@ -52,13 +52,19 @@ button {
   border: none;
   border-radius: .25rem;
   padding: 1rem;
-  transition: background 0.3s;
+  transition: 0.3s;
+  transition-property: background opacity;
   cursor: pointer;
   font-family: inherit;
   font-weight: bold;
-  font-size:1rem;
+  font-size: 1rem;
 }
 
 button:hover {
   background-color: var(--orange-dark);
+}
+
+button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
 }
