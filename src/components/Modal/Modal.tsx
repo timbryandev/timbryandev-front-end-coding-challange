@@ -24,9 +24,9 @@ function Modal (): JSX.Element | null {
       <div className='modal__content'>
         <header className='modal__header'>
           {typeof title === 'string' && <h2>{title}</h2>}
-          <span onClick={handleClose} role='button'>
-            x
-          </span>
+          <button onClick={handleClose} className="modal__close modal__close--header">
+            &times;
+          </button>
         </header>
         <section>{content}</section>
         <footer>
@@ -34,7 +34,7 @@ function Modal (): JSX.Element | null {
             {actions?.map(([label, fn]) => (
               <button onClick={fn}>{label}</button>
             ))}
-            <button onClick={handleClose} role='button'>
+            <button onClick={handleClose} className="modal__close">
               Close
             </button>
           </>

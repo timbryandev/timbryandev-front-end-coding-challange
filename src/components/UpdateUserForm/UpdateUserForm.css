@@ -1,4 +1,25 @@
-.update-user {
-
+.update-user__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
 }
 
+.update-user__row label {
+  min-width: 120px;
+}
+
+.update-user__row input {
+  flex-grow:1;
+  background-color: transparent;
+  border: 1px solid var(--orange-dark);
+  color: var(--light);
+  padding: .25rem;
+  outline: none;
+}
+.update-user__row input:focus,
+.update-user__row input:active {
+  border: 1px solid var(--orange-light);
+  box-shadow: var(--box-shadow-light);
+}

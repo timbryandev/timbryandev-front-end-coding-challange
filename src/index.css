@@ -5,6 +5,8 @@
   --orange-light: #ff9800;
   --orange-dark: #d17f07;
 
+  --box-shadow-light:  0 0 5px 1px var(--orange-light);
+
   font-family: monospace, sans-serif;
   font-size: 18px;
   line-height: 24px;

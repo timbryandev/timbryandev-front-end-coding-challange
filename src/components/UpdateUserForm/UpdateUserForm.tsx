@@ -59,25 +59,31 @@ function UpdateUserForm ({
       }}
     >
       <div className='update-user__row'>
+        <label htmlFor='firstName'>First name</label>
         <input
           type='text'
           name='firstName'
+          id='firstName'
           defaultValue={user.firstName}
           placeholder={user.firstName}
         />
       </div>
       <div className='update-user__row'>
+        <label htmlFor='lastName'>Last name</label>
         <input
           type='text'
           name='lastName'
+          id='lastName'
           defaultValue={user.lastName}
           placeholder={user.lastName}
         />
       </div>
       <div className='update-user__row'>
+        <label htmlFor='email'>Email</label>
         <input
           type='email'
           name='email'
+          id='email'
           defaultValue={user.email}
           placeholder={user.email}
         />

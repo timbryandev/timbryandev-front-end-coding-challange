@@ -9,5 +9,30 @@
 
 .modal__content {
   background: var(--dark);
-  color: red;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: var(--box-shadow-light);
+  padding: 1rem;
+  width: 80%;
+  width: -webkit-fill-available;
+  max-height: 90vh;
+  max-width: 90vh;
+  border-radius: 0.5rem;
+}
+
+.modal__header {
+  margin-right: 2rem;
+  text-align: left;
+}
+
+.modal__close--header {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1rem;
+  font-size: 2rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  cursor: pointer;
 }
