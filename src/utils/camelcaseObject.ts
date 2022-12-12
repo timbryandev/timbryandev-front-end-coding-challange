@@ -1,10 +1,6 @@
 import camelcase from 'camelcase'
 
-interface ObjType {
-  [key: string | number]: unknown
-}
-
-function camelcaseObject (obj: ObjType): ObjType {
+function camelcaseObject (obj: Object): Object {
   const camelObj = Object.entries(obj).reduce(
     (acc, [key, value]: [string | number, unknown]) => {
       let newKey = key
@@ -19,7 +15,7 @@ function camelcaseObject (obj: ObjType): ObjType {
       return acc
     },
     {}
-  ) as ObjType
+  )
 
   return camelObj
 }

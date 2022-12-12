@@ -21,3 +21,7 @@ export interface User {
   lastName: string
   avatar: string
 }
+
+export interface ApiData extends PaginationApiData {
+  data: User[]
+}
