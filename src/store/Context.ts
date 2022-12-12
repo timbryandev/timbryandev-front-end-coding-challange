@@ -4,9 +4,11 @@ import { ContextState } from './types'
 export const defaultContextState: ContextState = {
   users: [],
   pagination: {
-    currentPage: 1,
-    min: 1,
-    max: Infinity
+    firstPage: 1,
+    page: 1,
+    perPage: 6,
+    total: Infinity,
+    totalPages: Infinity
   },
   modal: {
     content: undefined,

@@ -5,10 +5,14 @@ export interface ModalState {
 }
 
 export interface PaginationState {
-  currentPage: number
-  min: number
-  max: number
+  firstPage: number
+  page: number
+  perPage: number
+  total: number
+  totalPages: number
 }
+
+export type PaginationApiData = Omit<PaginationState, 'firstPage'>
 
 export interface User {
   id: number

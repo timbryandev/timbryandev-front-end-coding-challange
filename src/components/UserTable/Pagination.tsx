@@ -4,14 +4,14 @@ import './Pagination.css'
 
 function Pagination (): JSX.Element {
   const { context, setContext } = useContext(Context)
-  const { currentPage, min, max } = context.pagination
+  const { firstPage, page, totalPages } = context.pagination
 
   const updatePagination = (value: number): void => {
     setContext({
       ...context,
       pagination: {
         ...context.pagination,
-        currentPage: context.pagination.currentPage + value
+        page: context.pagination.page + value
       }
     })
   }
@@ -21,18 +21,18 @@ function Pagination (): JSX.Element {
       <button
         className='pagination__button'
         title='previous'
-        disabled={currentPage <= min}
+        disabled={page <= firstPage}
         onClick={() => updatePagination(-1)}
       >
         &lt;
       </button>
       <p>
-        Page {currentPage} of {max}
+        Page {page} of {totalPages}
       </p>
       <button
         className='pagination__button'
         title='next'
-        disabled={currentPage >= max}
+        disabled={page >= totalPages}
         onClick={() => updatePagination(1)}
       >
         &gt;
