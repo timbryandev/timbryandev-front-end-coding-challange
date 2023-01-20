@@ -19,8 +19,8 @@ You will need the following to complete the task:
 
 - An account with a public GIT hosting service that we can access ([GitHub](https://github.com/)/[GitLab](https://about.gitlab.com/)/[BitBucket](https://bitbucket.org/product) et al)
 - [GIT](https://git-scm.com/) installed locally
-- [Node](https://nodejs.org/en/) <= 16
-- [NPM](https://www.npmjs.com/package/npm) <= 7
+- [Node](https://nodejs.org/en/) >= 16
+- [NPM](https://www.npmjs.com/package/npm) >= 7
 
 ## Getting started
 
